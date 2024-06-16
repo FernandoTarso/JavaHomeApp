@@ -18,12 +18,6 @@ public class HomeApp {
               .userName("admin")
               .passWord("password")
               .build();
-
-//      User usuarioAdm = new User
-//              ("Administrador",
-//                      "",
-//                      "admin",
-//                      "password");
       usuarioAdm.setFullName();
       users.add(usuarioAdm);
 
