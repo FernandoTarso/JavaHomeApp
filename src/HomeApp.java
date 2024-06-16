@@ -41,22 +41,28 @@ public class HomeApp {
 
          switch (commandCode) {
             case "1":
-               User actual = new User();
+//               User actual = new User();
                System.out.println("Digite o nome do usuário: - - -");
-               actual.setFirstName(scanner.nextLine());
+               String actualFirstName = (scanner.nextLine());
                System.out.println("Digite o sobrenome do usuário: ");
-               actual.setLastName(scanner.nextLine());
-               actual.setFullName();
+               String actualLastName = scanner.nextLine();
                System.out.println("Digite o loggin da conta: - - -");
-               actual.setUserName(scanner.nextLine());
+               String actualUserName = scanner.nextLine();
                boolean pWconf = false;
                while (!pWconf) {
                   System.out.println("Digite a senha da conta: - - -");
-                  actual.setPassWord(scanner.nextLine());
+                  String actualPassWord = scanner.nextLine();
                   System.out.println("Digite a senha novamente: - - -");
                   String passWordConfirmation = scanner.nextLine();
-                  if (passWordConfirmation.equals(actual.getPassWord())) {
+                  if (actualPassWord.equals(passWordConfirmation)) {
                      pWconf = true;
+                     User actual = new User.UserBuilder()
+                             .firstName(actualFirstName)
+                             .lastName(actualLastName)
+                             .userName(actualUserName)
+                             .passWord(actualPassWord)
+                             .build();
+                     actual.setFullName();
                      users.add(actual);
                      System.out.println("* * * * * * * * * * * * * * * *");
                      System.out.println("Usuário cadastrado com sucesso.");
