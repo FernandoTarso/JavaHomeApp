@@ -12,13 +12,22 @@ public class HomeApp {
       List<User> users = new ArrayList<>();
       Scanner scanner = new Scanner(System.in);
       boolean isOn = true;
-      User usuarioAdm = new User
-              ("Administrador",
-                      "",
-                      "admin",
-                      "password");
+      User usuarioAdm = new User.UserBuilder()
+              .firstName("Administrador")
+              .lastName("")
+              .userName("admin")
+              .passWord("password")
+              .build();
+
+//      User usuarioAdm = new User
+//              ("Administrador",
+//                      "",
+//                      "admin",
+//                      "password");
       usuarioAdm.setFullName();
       users.add(usuarioAdm);
+
+
 
       while (isOn) {
 //         System.out.println(usuarioAdm.getUserNumber());

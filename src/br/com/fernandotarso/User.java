@@ -69,6 +69,7 @@ public class User {
    public String getUserName() {
       return userName;
    }
+
    public void setPassWord(String passWord) {
       this.passWord = passWord;
    }
@@ -82,4 +83,37 @@ public class User {
               "\nUsuário: " + userName +
               "\nOnline: " + isLogged;
    }
+
+//   Builder
+
+   public static class UserBuilder {
+
+      private String firstName;
+      private String lastName;
+      private String userName;
+      private String passWord;
+
+
+      public UserBuilder firstName(String firstName) {
+         this.firstName = firstName;
+         return this;
+      }
+      public UserBuilder lastName(String lastName) {
+         this.lastName = lastName;
+         return this;
+      }
+      public UserBuilder userName(String userName) {
+         this.userName = userName;
+         return this;
+      }
+      public UserBuilder passWord(String passWord) {
+         this.passWord = passWord;
+         return this;
+      }
+
+      public User build() {
+         return new User(firstName, lastName, userName, passWord);
+      }
+   }
+
 }
