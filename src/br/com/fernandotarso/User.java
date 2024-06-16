@@ -1,6 +1,12 @@
 package br.com.fernandotarso;
 
+import java.io.File;
+import java.io.IOException;
+
 public class User {
+
+
+//   C:\Users\Fernando\IdeaProjects\HomeApp\listaUsuarios.txt
 
    // Propriedades
 
@@ -82,6 +88,21 @@ public class User {
       return "Nome: " + fullName +
               "\nUsuário: " + userName +
               "\nOnline: " + isLogged;
+   }
+
+   public static File createListFile() {
+      File userList;
+      try {
+         userList = new File("listaUsuarios.txt");
+         if (userList.createNewFile()) {
+            System.out.println("Lista de usuários criada: " + userList.getName());
+         } else {
+            System.out.println("Lista de usuários carregada.\n" + userList.getAbsolutePath());
+         }
+      } catch (IOException e) {
+         throw new RuntimeException(e);
+      }
+      return userList;
    }
 
 //   Builder

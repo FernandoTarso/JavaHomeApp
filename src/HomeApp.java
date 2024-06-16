@@ -4,6 +4,7 @@ import java.lang.*;
 import br.com.fernandotarso.User;
 import static br.com.fernandotarso.Fibonacci.fibonacciSequence;
 import static br.com.fernandotarso.Calculate.calculator;
+import static br.com.fernandotarso.User.createListFile;
 import static br.com.fernandotarso.Vetores.calcVetores;
 import static br.com.fernandotarso.ListaMercado.listaCompras;
 
@@ -13,17 +14,7 @@ public class HomeApp {
 
       List<User> users = new ArrayList<>();
       Scanner scanner = new Scanner(System.in);
-
-      try {
-         File userList = new File("listaUsuarios.txt");
-         if (userList.createNewFile()) {
-            System.out.println("Lista de usuários criada: " + userList.getName());
-         } else {
-            System.out.println("Lista de usuários carregada.\n" + userList.getAbsolutePath());
-         }
-      } catch (IOException e) {
-         throw new RuntimeException(e);
-      }
+      File listaUsuario = createListFile();
 
       User usuarioAdm = new User.UserBuilder()
               .firstName("Administrador")
