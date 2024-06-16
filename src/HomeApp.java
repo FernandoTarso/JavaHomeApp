@@ -1,5 +1,7 @@
+import java.io.IOException;
 import java.util.*;
 import java.lang.*;
+import java.io.File;
 import br.com.fernandotarso.User;
 import static br.com.fernandotarso.Fibonacci.fibonacciSequence;
 import static br.com.fernandotarso.Calculate.calculator;
@@ -9,6 +11,18 @@ import static br.com.fernandotarso.ListaMercado.listaCompras;
 public class HomeApp {
 
    public static void main(String[] args) {
+
+      try {
+         File userList = new File("listaUsuarios.txt");
+         if (userList.createNewFile()) {
+            System.out.println("Lista de usuários criada: " + userList.getName());
+         } else {
+            System.out.println("Lista de usuários carregada.\n" + userList.getAbsolutePath());
+         }
+      } catch (IOException e) {
+         throw new RuntimeException(e);
+      }
+
       List<User> users = new ArrayList<>();
       Scanner scanner = new Scanner(System.in);
       boolean isOn = true;
@@ -24,8 +38,6 @@ public class HomeApp {
 
 
       while (isOn) {
-//         System.out.println(usuarioAdm.getUserNumber());
-         System.out.println(User.getUserNumber());
          System.out.println("-------------------------------");
          System.out.println("[1] - Cadastrar novo usuário. -");
          System.out.println("[2] - Entrar  - - - - - - - - -");

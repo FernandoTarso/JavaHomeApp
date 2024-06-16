@@ -3,7 +3,7 @@ import java.util.Objects;
 
 public class LogginValidation {
 
-//   public static String logginValidation(String user) {
+//   public LogginValidation logginValidation(String user) {
 //      if (Objects.nonNull(User.getUserName())) {
 //         return User.getPassWord();
 //      } else {
@@ -11,4 +11,5 @@ public class LogginValidation {
 //         return null;
 //      }
 //   }
+
 }
