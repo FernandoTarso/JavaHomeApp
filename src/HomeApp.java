@@ -77,7 +77,8 @@ public class HomeApp {
                String userEntry = scanner.nextLine();
                System.out.println("Senha:");
                String userPass = scanner.nextLine();
-               if (usuarioAdm.getUserName().equals(userEntry) && usuarioAdm.getPassWord().equals(userPass)) {
+               if (usuarioAdm.getUserName().equals(userEntry)
+                       && usuarioAdm.getPassWord().equals(userPass)) {
                   usuarioAdm.setLogged(true);
                   System.out.println("Bem vindo, " + usuarioAdm.getFirstName() + ".");
                } else {
@@ -107,7 +108,8 @@ public class HomeApp {
                case "users":
                case "usuarios":
                case "show users":
-                  System.out.println("Lista atual de usuários \ncadastrados:");
+                  System.out.println("Lista atual de usuários " +
+                          "\ncadastrados:");
                   System.out.println("- - - - - - - - - - - - - - - -");
                   for (User user : users) {
                      System.out.println(user);
@@ -117,12 +119,9 @@ public class HomeApp {
                case "fibo":
                case "fibonacci":
                case "fibonacci sequence":
-                  System.out.println("Quantos termos da sequencia\n Fibonacci deseja imprimir?");
-                  int terms = Integer.parseInt(scanner.nextLine());
-                  if (terms > 93) {
-                     terms = 93;
-                  }
-                  fibonacciSequence(terms);
+                  System.out.println("Quantos termos da sequencia" +
+                          "\n Fibonacci deseja imprimir?");
+                  fibonacciSequence(Integer.parseInt(scanner.nextLine()));
                   break;
                case "vetor":
                case "vetores":

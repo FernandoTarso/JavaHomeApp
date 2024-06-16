@@ -4,6 +4,10 @@ public class Fibonacci {
 
    public static void fibonacciSequence(int terms) {
 
+      if (terms > 93) {
+         terms = 93;
+      }
+
       long x_1 = -1;
       long x_2 = 1;
       long sum;
