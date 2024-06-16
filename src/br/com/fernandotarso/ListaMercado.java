@@ -5,27 +5,25 @@ public class ListaMercado {
 
    static Scanner scanner = new Scanner(System.in);
    static List<String> listaDeCompras = new ArrayList<>();
-
    public static void listaCompras() {
       boolean listaOn = true;
       while (listaOn) {
          System.out.println("- - - - - - - - - - - - -");
          System.out.println("O que deseja fazer?");
-         System.out.println("add: adiciona um item;");
-         System.out.println("rem: remove um item;");
+         System.out.println("1: adiciona um item;");
+         System.out.println("0: remove um item;");
          System.out.println("list: exibe a lista atual;");
          System.out.println("sair: fecha o programa.");
          System.out.println("- - - - - - - - - - - - -");
          String acao = scanner.nextLine().trim();
          switch (acao) {
-            case "add":
+            case "1":
                adicionarItem(); break;
-            case "rem":
+            case "0":
                removerItem(); break;
             case "list":
                listarItens(); break;
             case "sair":
-//               scanner.close();
                listaOn = false; break;
             default: break;
          }
