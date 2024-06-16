@@ -12,6 +12,9 @@ public class HomeApp {
 
    public static void main(String[] args) {
 
+      List<User> users = new ArrayList<>();
+      Scanner scanner = new Scanner(System.in);
+
       try {
          File userList = new File("listaUsuarios.txt");
          if (userList.createNewFile()) {
@@ -23,9 +26,6 @@ public class HomeApp {
          throw new RuntimeException(e);
       }
 
-      List<User> users = new ArrayList<>();
-      Scanner scanner = new Scanner(System.in);
-      boolean isOn = true;
       User usuarioAdm = new User.UserBuilder()
               .firstName("Administrador")
               .lastName("")
@@ -35,8 +35,7 @@ public class HomeApp {
       usuarioAdm.setFullName();
       users.add(usuarioAdm);
 
-
-
+      boolean isOn = true;
       while (isOn) {
          System.out.println("-------------------------------");
          System.out.println("[1] - Cadastrar novo usuário. -");
@@ -47,7 +46,6 @@ public class HomeApp {
 
          switch (commandCode) {
             case "1":
-//               User actual = new User();
                System.out.println("Digite o nome do usuário: - - -");
                String actualFirstName = (scanner.nextLine());
                System.out.println("Digite o sobrenome do usuário: ");
