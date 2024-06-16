@@ -1,7 +1,6 @@
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 import java.lang.*;
-import java.io.File;
 import br.com.fernandotarso.User;
 import static br.com.fernandotarso.Fibonacci.fibonacciSequence;
 import static br.com.fernandotarso.Calculate.calculator;
