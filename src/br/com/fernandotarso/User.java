@@ -75,4 +75,11 @@ public class User {
    public String getPassWord() {
       return passWord;
    }
+
+   @Override
+   public String toString() {
+      return "Nome: " + fullName +
+              "\nUsuário: " + userName +
+              "\nOnline: " + isLogged;
+   }
 }

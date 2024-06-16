@@ -33,28 +33,18 @@ public class HomeApp {
          switch (commandCode) {
             case "1":
                User actual = new User();
-               System.out.println("-------------------------------");
                System.out.println("Digite o nome do usuário: - - -");
-               System.out.println("-------------------------------");
                actual.setFirstName(scanner.nextLine());
-               System.out.println("-------------------------------");
                System.out.println("Digite o sobrenome do usuário: ");
-               System.out.println("-------------------------------");
                actual.setLastName(scanner.nextLine());
                actual.setFullName();
-               System.out.println("-------------------------------");
                System.out.println("Digite o loggin da conta: - - -");
-               System.out.println("-------------------------------");
                actual.setUserName(scanner.nextLine());
                boolean pWconf = false;
                while (!pWconf) {
-                  System.out.println("-------------------------------");
                   System.out.println("Digite a senha da conta: - - -");
-                  System.out.println("-------------------------------");
                   actual.setPassWord(scanner.nextLine());
-                  System.out.println("-------------------------------");
                   System.out.println("Digite a senha novamente: - - -");
-                  System.out.println("-------------------------------");
                   String passWordConfirmation = scanner.nextLine();
                   if (passWordConfirmation.equals(actual.getPassWord())) {
                      pWconf = true;
@@ -63,9 +53,7 @@ public class HomeApp {
                      System.out.println("Usuário cadastrado com sucesso.");
                      System.out.println("* * * * * * * * * * * * * * * *");
                   } else {
-                     System.out.println("-------------------------------");
                      System.out.println("Senha incompatível. - - - - - -");
-                     System.out.println("-------------------------------");
                   }
                }
                break;
@@ -104,12 +92,10 @@ public class HomeApp {
                case "users":
                case "usuarios":
                case "show users":
-                  System.out.println("-------------------------------");
                   System.out.println("Lista atual de usuários \ncadastrados:");
-                  System.out.println("-------------------------------");
                   System.out.println("- - - - - - - - - - - - - - - -");
                   for (User user : users) {
-                     System.out.println(user.getFullName());
+                     System.out.println(user);
                      System.out.println("- - - - - - - - - - - - - - - -");
                   }
                   break;
