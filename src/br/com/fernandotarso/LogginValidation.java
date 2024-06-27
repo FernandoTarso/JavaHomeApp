@@ -1,5 +1,4 @@
 package br.com.fernandotarso;
-import java.util.Objects;
 
 public class LogginValidation {
 

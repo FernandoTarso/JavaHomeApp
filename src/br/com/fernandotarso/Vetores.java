@@ -1,6 +1,6 @@
 package br.com.fernandotarso;
-import java.util.*;
 import static java.lang.Math.*;
+import java.util.*;
 public class Vetores {
 
    public static void calcVetores() {
@@ -39,6 +39,6 @@ public class Vetores {
       System.out.println("Vetor B: [ " + vetor_b[0] + " , " + vetor_b[1] + " ];");
       double pV_a_b = modulo_a * modulo_b * (sin(ang_a_b_rad));
       System.out.println(pV_a_b);
-
+      scanner.close();
    }
 }

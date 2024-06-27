@@ -12,6 +12,7 @@ public class Calculate {
          command = scanner.nextLine().split(" ");
       }
       System.out.println("Closing...");
+      scanner.close();
    }
    static void calculate(int number1, String operation, int number2) {
       if (operation.equalsIgnoreCase("+")) {
