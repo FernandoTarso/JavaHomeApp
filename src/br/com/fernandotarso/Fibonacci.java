@@ -4,8 +4,6 @@ public class Fibonacci {
 
    public static void fibonacciSequence(int terms) {
 
-      terms = 100;
-
       if (terms > 92) {
          terms = 92;
       }
